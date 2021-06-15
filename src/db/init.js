@@ -29,15 +29,17 @@ const initDb = {
     monthly_budget,
     days_per_week,
     hours_per_day,
-    vacation_per_year
-    ) VALUES(
+    vacation_per_year,
+    value_hour
+    ) VALUES (
     "Pedro",
     "https://avatars.githubusercontent.com/u/53826489?v=4",
     3000,
     5,
     5,
-    4
-  );`)
+    4,
+    40
+  );`);
 
     await db.run(`INSERT INTO jobs(
     name,
@@ -49,7 +51,7 @@ const initDb = {
     2,
     1,
     123456789
-  );`)
+  );`);
 
     await db.close()
   }

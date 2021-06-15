@@ -5,7 +5,7 @@ module.exports = {
     return res.render("profile", { profile: await Profile.get() })
   },
 
-  update(req, res) {
+  async update(req, res) {
     // req.body para pegar os dados
     const data = req.body
 
@@ -22,11 +22,11 @@ module.exports = {
 
     const profile = await Profile.get()
 
-    Profile.update({
+    await Profile.update({
       ...profile,
       ...req.body,
-      "value-hour": valueHour
-    })
+      "value-hour": valueHour,
+    });
 
     return res.redirect('/profile')
   }
